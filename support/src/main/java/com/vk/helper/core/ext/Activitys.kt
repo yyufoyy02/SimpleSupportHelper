@@ -38,7 +38,7 @@ inline fun Activity.setStatusBarColorResource(@ColorRes colorRid: Int) {
  * 页面跳转方法
  * @param params Intent里面的参数
  */
-inline fun <reified T : Activity> Context.startActivity(vararg params: Pair<String, Any?>) {
+inline fun <reified T : Activity> Context.goActivity(vararg params: Pair<String, Any?>) {
     val intent = Intent(this, T::class.java)
     FillIntent.fillIntentArguments(intent = intent, params = params)
     this.startActivity(intent)
@@ -50,7 +50,7 @@ inline fun <reified T : Activity> Context.startActivity(vararg params: Pair<Stri
  * @param requestCode
  * 兼容旧的逻辑，对requestCoder == NO_REQUEST_CODE特殊处理，不调用startActivityForResult，不然会报错
  */
-inline fun <reified T : Activity> Activity.startActivityForResult(vararg params: Pair<String, Any?>, requestCode: Int) {
+inline fun <reified T : Activity> Activity.goActivityForResult(vararg params: Pair<String, Any?>, requestCode: Int) {
     val intent = Intent(this, T::class.java)
     FillIntent.fillIntentArguments(intent = intent, params = params)
     startActivityForResult(intent, requestCode)
