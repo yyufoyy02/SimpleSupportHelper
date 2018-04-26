@@ -16,7 +16,10 @@ import java.util.ArrayList
  * @return json字符串
  * @throws Exception
  */
-fun Any.toJson(): String {
+fun Any?.toJson(): String {
+    if (this == null) {
+        return ""
+    }
     return GsonHelper.objectToJson(this)
 }
 

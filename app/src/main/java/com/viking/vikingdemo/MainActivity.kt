@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.vk.helper.BaseSupport
 import com.vk.helper.core.AppContextHelper
 import com.vk.helper.core.ext.toJavaBean
+import com.vk.helper.core.ext.toJson
 import com.vk.helper.core.loggerE
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -40,8 +41,15 @@ class MainActivity : AppCompatActivity() {
                 "    }\n" +
                 "]"
         tvText.setOnClickListener {
-            val user= json.toJavaBean<List<UserT>>()
-            loggerE(user.toString())
+
+
+
+            val userList= json.toJavaBean<List<UserT>>()
+
+
+            loggerE(userList!![0].toJson())
+
+
         }
 
     }
