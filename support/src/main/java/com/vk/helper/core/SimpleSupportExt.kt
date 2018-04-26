@@ -17,14 +17,6 @@ import java.text.DecimalFormat
 inline fun application() = AppContextHelper.application
 
 /**
- * Toast辅助类
- */
-@JvmOverloads
-inline fun showToast(text: String?, duration: Int = ToastHelper.DEFAULT_DURATION) {
-    ToastHelper.showToast(text, duration)
-}
-
-/**
  * 屏幕辅助类
  */
 inline fun getScreenWidth() = ScreenHelper.getScreenWidth()
