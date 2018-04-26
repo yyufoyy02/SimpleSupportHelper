@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/title_edit_title"
+        style="@style/DetailsTitle.width"
+        android:layout_width="@dimen/dp75"
+        android:layout_height="wrap_content"
+        tools:text="系统认证"/>
+
+    <EditText
+        android:id="@+id/title_edit_content"
+        style="@style/InputEditText"
+        tools:text="name" />
+</LinearLayout>

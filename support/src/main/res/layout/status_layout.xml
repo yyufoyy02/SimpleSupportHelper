@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+  >
+
+
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tv_status_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp15"
+        android:gravity="center"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/sp14" />
+    <TextView
+        android:id="@+id/tv_status_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp25"
+        android:gravity="center"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/sp14"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_status_action"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp40"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp50"
+        android:background="@drawable/corners_pinkbg_radius5"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp15"
+        android:visibility="gone" />
+
+
+</merge>

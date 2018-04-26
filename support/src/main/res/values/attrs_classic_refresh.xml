@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ClassicRefreshLayout">
+        <attr name="crlHeaderTitleSize" format="reference|dimension" />
+        <attr name="crlHeaderTimeSize" format="reference|dimension" />
+        <attr name="crlFooterTitleSize" format="reference|dimension" />
+        <attr name="crlHeaderDrawableSize" format="reference|dimension" />
+        <attr name="crlFooterDrawableSize" format="reference|dimension" />
+        <attr name="crlHeaderDrawableMarginRight" format="reference|dimension" />
+        <attr name="crlFooterDrawableMarginRight" format="reference|dimension" />
+        <attr name="crlHeaderBackgroundColor" format="reference|color" />
+        <attr name="crlFooterBackgroundColor" format="reference|color" />
+        <attr name="crlHeaderTextColor" format="reference|color" />
+        <attr name="crlFooterTextColor" format="reference|color" />
+        <attr name="crlHeaderHeight" format="reference|dimension" />
+        <attr name="crlFooterHeight" format="reference|dimension" />
+    </declare-styleable>
+
+</resources>

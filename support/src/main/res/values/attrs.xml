@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="mutate_background" format="boolean" />
+        <attr name="oval" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="top_left_radius" format="dimension"/>
+        <attr name="top_right_radius" format="dimension"/>
+        <attr name="bottom_right_radius" format="dimension"/>
+        <attr name="bottom_left_radius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="frameDrawable" format="reference|color" />
+        <attr name="stateDrawable" format="reference|color" />
+        <attr name="stateMaskDrawable" format="reference|color" />
+        <attr name="sliderDrawable" format="reference|color" />
+        <attr name="withTextInterval" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="FlowIndicator">
+        <attr name="count" format="integer" />
+        <attr name="space" format="dimension" />
+        <attr name="point_size" format="dimension" />
+        <attr name="point_seleted_color" format="color|reference" />
+        <attr name="point_normal_color" format="color|reference" />
+        <attr name="point_radius" format="dimension" />
+    </declare-styleable>
+
+    <!-- activity status 自定义属性 -->
+    <declare-styleable name="StatusLayout">
+        <attr name="tipString" format="reference" />
+        <attr name="descString" format="reference" />
+        <attr name="descTextcolor" format="color" />
+        <attr name="tipImageRes" format="reference" />
+        <attr name="showBtn" format="boolean" />
+        <attr name="btnString" format="reference" />
+        <attr name="btnWidth" format="reference" />
+        <attr name="tipTextcolor" format="color" />
+    </declare-styleable>
+</resources>

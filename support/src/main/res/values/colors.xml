@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  basic colors -->
+    <color name="pink_f58">#F58</color>
+    <color name="pink_f9b">#F9B</color>
+    <color name="pink_ff5577">#ff5577</color>
+    <color name="pink_ff5252">#ff5252</color>
+    <color name="pink_ff5577_90">#e5ff5577</color>
+    <color name="pink_ff5577_60">#4cff5577</color>
+    <color name="pink_ff5577_26">#1aff5577</color>
+    <color name="pink_ff6699_60">#4Cff6699</color>
+    <color name="pink_ffdce6">#ffdce6</color>
+    <color name="pink_fff2f5">#fff2f5</color>
+    <color name="pink_fc5779">#fc5779</color>
+    <color name="pink_ff4066">#ff4066</color>
+    <color name="pink_f76ab4">#f76ab4</color>
+    <color name="pink_fff3f7">#fff3f7</color>
+    <color name="red_ff0055">#ff0055</color>
+    <color name="red_ff0033">#ff0033</color>
+    <color name="red_ff2626">#ff2626</color>
+    <color name="red_fa7594">#fa7594</color>
+    <color name="purple_c783ff">#c783ff</color>
+    <color name="purple_7000e3">#7000e3</color>
+    <color name="purple_7582fe">#7582fe</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="white_95">#f0ffffff</color>
+    <color name="white_90">#e4ffffff</color>
+    <color name="white_80">#ccffffff</color>
+    <color name="white_50">#7AFFFFFF</color>
+    <color name="white_10">#19FFFFFF</color>
+    <color name="white_d4d4d4">#FFD4D4D4</color>
+    <color name="white_f5f5f5">#F5F5F5</color>
+    <color name="white_ebebeb">#EBEBEB</color>
+    <color name="blue_40c4ff_5">#f240c4ff</color>
+    <color name="blue_40c4ff">#40c4ff</color>
+    <color name="blue_5c7099">#5c7099</color>
+    <color name="blue_29b6f6">#29b6f6</color>
+    <color name="blue_03a9f4">#03a9f4</color>
+    <color name="blue_80a7ff">#80a7ff</color>
+    <color name="black">#000000</color>
+    <color name="black_30">#4c000000</color>
+    <color name="black_45">#45000000</color>
+    <color name="black_70">#B2000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_333333">#333333</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_10">#19000000</color>
+    <color name="transparent_30">#4C000000</color>
+    <color name="transparent_40">#66000000</color>
+    <color name="transparent_50">#88000000</color>
+    <color name="transparent_70">#B2000000</color>
+    <color name="orange">#ff6600</color>
+    <color name="orange_ff7c00">#ff7c00</color>
+    <color name="orange_ff8800">#ff8800</color>
+    <color name="orange_ff9500">#ff9500</color>
+    <color name="orange_ffa580">#ffa580</color>
+    <color name="orange_ff9a05">#ff9a05</color>
+    <color name="orange_fe7d5c">#fe7d5c</color>
+    <color name="orange_fff5e3">#fff5e3</color>
+    <color name="orange_ca7e0c">#ca730c</color>
+    <color name="brown_834300">#834300</color>
+    <color name="green">#44dc66</color>
+    <color name="green_70c481">#70c481</color>
+
+    <color name="yellow_fff0b2">#fff0b2</color>
+    <color name="yellow_ffea00">#ffea00</color>
+    <color name="gray">#f2f3f5</color>
+    <color name="grey_78909c">#78909c</color>
+    <color name="gray_999">#999</color>
+    <color name="gray_c1c1c1">#c1c1c1</color>
+    <color name="gray_f3f3f3">#f3f3f3</color>
+    <color name="gray_f8f8f8">#f8f8f8</color>
+    <color name="gray_cccccc">#cccccc</color>
+
+    <color name="main_color">@color/pink_ff5577</color>
+    <color name="line">#dddddd</color>
+    <color name="dialog_line">#e9e9e9</color>
+    <color name="hint_text_color">#cccccc</color>
+    <color name="text_color_333333">#333333</color>
+    <color name="text_color_323232">#323232</color>
+    <color name="text_color_444444">#444444</color>
+    <color name="text_color_555555">#555555</color>
+    <color name="text_color_666666">#666666</color>
+    <color name="text_color_999999">#999999</color>
+    <color name="text_color_E9E9E9">#E9E9E9</color>
+    <color name="text_color_F8F8F8">#F8F8F8</color>
+    <color name="text_color_cccccc">#cccccc</color>
+    <color name="text_color_808080">#808080</color>
+    <color name="text_color_9c6740">#9c6740</color>
+    <color name="text_color_C58738">#C58738</color>
+    <color name="dialog_button_normal_light">@android:color/transparent</color>
+    <color name="dialog_button_pressed_light">#99ff6699</color>
+    <color name="dialog_button_focused_light">#4Cff6699</color>
+    <color name="tab_indicator_text_selected">@color/white</color>
+    <color name="tab_indicator_text_unselected">#aac5d7</color>
+    <color name="main_live_blue">#4E81B4</color>
+    <color name="imageloader_black">#999999</color>
+    <color name="text_808080">#808080</color>
+
+    <color name="ffffff_transport_90">#ffffff</color>
+
+
+    <color name="gray_f2f2f2">#f2f2f2</color>
+</resources>
+

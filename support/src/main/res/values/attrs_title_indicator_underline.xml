@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="UnderlineTitleIndicator">
+        <attr name="utl_textColor" format="color|reference"/>
+        <attr name="utl_textSizeNormal" format="dimension"/>
+        <attr name="utl_textSizeSelected" format="dimension"/>
+        <attr name="utl_underlineColor" format="color"/>
+        <attr name="utl_underlineHeight" format="dimension"/>
+        <attr name="utl_underlinePadding" format="dimension"/>
+    </declare-styleable>
+
+</resources>

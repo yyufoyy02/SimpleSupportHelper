@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- 选项卡 -->
+    <style name="MyWidget" parent="@android:style/Theme" />
+
+    <style name="MyWidget.TabText">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@drawable/tab_indicator_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="SimpleDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="HorizontalSimpleDialog" parent="SimpleDialog">
+        <item name="android:backgroundDimEnabled">false</item>
+
+    </style>
+
+    <style name="NormalDialogTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowAnimationStyle">@style/dialog_animation</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+
+
+    <style name="NormalDialogThemeWithOutAnim" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="dialog_animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+
+    <style name="SpeechRecognizerSimpleDialog" parent="SimpleDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="SimpleAlertDialogButton" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/dp12</item>
+        <item name="android:paddingBottom">@dimen/dp12</item>
+        <item name="android:minHeight">@dimen/dp48</item>
+        <item name="android:minWidth">@dimen/dp64</item>
+        <item name="android:paddingLeft">@dimen/dp4</item>
+        <item name="android:paddingRight">@dimen/dp4</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/sp15</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/myalert_button</item>
+    </style>
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_bottom
+        </item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_bottom
+        </item>
+    </style>
+
+    <style name="HorizontalLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp50</item>
+        <item name="android:paddingLeft">@dimen/dp15</item>
+        <item name="android:paddingRight">@dimen/dp15</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="DetailsTitle">
+        <item name="android:textColor">@color/text_color_333333</item>
+        <item name="android:textSize">@dimen/sp15</item>
+        <item name="android:layout_gravity">center</item>
+
+    </style>
+
+    <style name="DetailsTitle.width">
+        <item name="android:layout_width">@dimen/dp75</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="DetailsTitle.DetailsContent">
+        <item name="android:hint">@color/hint_text_color</item>
+    </style>
+
+    <style name="InputEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/text_color_333333</item>
+        <item name="android:textSize">@dimen/sp15</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/text_color_999999</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/main_color</item>
+    </style>
+
+    <style name="GuideDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="TranslucenceProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_transclucent_loading</item>
+    </style>
+
+
+</resources>

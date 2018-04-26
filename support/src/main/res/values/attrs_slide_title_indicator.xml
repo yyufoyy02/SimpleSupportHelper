@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WrapTitleIndicator">
+        <attr name="stl_textColor" format="color|reference" />
+        <attr name="stl_textSizeNormal" format="dimension" />
+        <attr name="stl_textSizeSelected" format="dimension" />
+        <attr name="stl_underlineColor" format="color" />
+        <attr name="stl_underlineHeight" format="dimension" />
+        <attr name="stl_tabLeftMargin" format="dimension" />
+        <attr name="stl_tabRightMargin" format="dimension" />
+    </declare-styleable>
+
+</resources>

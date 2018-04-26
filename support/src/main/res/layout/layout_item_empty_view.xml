@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp15"
+    android:paddingTop="@dimen/dp15">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp200"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:text="暂无内容"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/sp15" />
+</FrameLayout>
