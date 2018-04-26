@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            val userList= json.toJavaBean<List<UserT>>()
+            val userList= json.toJavaBean<MutableList<UserT>>()
 
 
             loggerE(userList!![0].toJson())
