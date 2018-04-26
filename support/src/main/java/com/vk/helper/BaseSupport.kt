@@ -17,6 +17,11 @@ import com.vk.helper.core.helper.DensityHelper
  */
 object BaseSupport {
 
+    /**
+     * 是否debug模式
+     */
+    var DEBUG: Boolean = false
+
     inline fun initConfig(block: Builder.() -> Unit) {
         val builder = Builder.build(block)
         builder.application?.let {
@@ -25,11 +30,13 @@ object BaseSupport {
         if (builder.multiple != 0.0f) {
             DensityHelper.setMultiple(builder.multiple)
         }
+        DEBUG = builder.debug
     }
 
     class Builder {
         var application: Application? = null
         var multiple: Float = 1.0f
+        var debug: Boolean = false
 
         fun build() = this
 
