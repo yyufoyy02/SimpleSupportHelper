@@ -51,7 +51,7 @@ fun ByteArray.toHexString(): String {
 /**
  * 设置部分字体颜色下划线
  */
-fun String.toColorSpannableString(begin: Int, end: Int, color: Int, under: Boolean = false): SpannableStringBuilder {
+inline fun String.toColorSpannableString(begin: Int, end: Int, color: Int, under: Boolean = false): SpannableStringBuilder {
     val style = SpannableStringBuilder(this)
     if (begin >= 0 && end >= 0 && begin != end) {
         if (under) {
@@ -62,4 +62,13 @@ fun String.toColorSpannableString(begin: Int, end: Int, color: Int, under: Boole
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     }
     return style
+}
+
+/**
+ * 创建String字符串
+ */
+inline fun createString(block: StringBuilder.() -> Unit): String {
+    val sb = StringBuilder()
+    sb.block()
+    return sb.toString()
 }

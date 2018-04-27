@@ -3,10 +3,11 @@ package com.viking.vikingdemo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.vk.helper.BaseSupport
-import com.vk.helper.core.AppContextHelper
+
 import com.vk.helper.core.ext.toJavaBean
 import com.vk.helper.core.ext.toJson
 import com.vk.helper.core.loggerE
+import com.vk.helper.core.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -43,18 +44,17 @@ class MainActivity : AppCompatActivity() {
         tvText.setOnClickListener {
 
 
+showToast("aaa")
+//            val userList= json.toJavaBean<MutableList<UserT>>()
 
-            val userList= json.toJavaBean<MutableList<UserT>>()
 
-
-            loggerE(userList!![0].toJson())
+//            loggerE(userList!![0].toJson())
 
 
         }
 
     }
 
-    data class UserT(var page_name: String? = null, var action: String?, var page_param: String?, var is_outpoint: Boolean)
 }
 
 
