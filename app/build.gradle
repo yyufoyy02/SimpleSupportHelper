@@ -12,10 +12,37 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    //签名配置
+    signingConfigs {
+        release {
+            //别名
+            keyAlias project.DemoAPP_ALAIS
+            keyPassword project.DemoAPP_PSW
+            //路径
+            storeFile getMyStoreFile()
+            storePassword project.DemoAPP_STORE_PSW
+            v1SigningEnabled true //对JAR签名
+            v2SigningEnabled true //对APK签名
+        }
+
+        debug {
+            //别名
+            keyAlias project.DemoAPP_ALAIS
+            keyPassword project.DemoAPP_PSW
+            //路径
+            storeFile getMyStoreFile()
+            storePassword project.DemoAPP_STORE_PSW
+        }
+    }
+
+
     buildTypes {
         release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -26,7 +53,7 @@ android {
             def fileName
             def outDirectory = "/apks"
 
-            if ("true" == IS_JENKINS) {
+            if ("true" == project.IS_JENKINS) {
                 fileName = "demo-v" + defaultConfig.versionCode + "-jenkins.apk"
             } else {
                 if (variant.buildType.name == 'debug') {
@@ -40,13 +67,19 @@ android {
         }
     }
 }
+/**
+ * 获取key路径，创建一份方法来获取key文件路径，jenkins和studio中可使用不同的路径
+ * @return
+ */
+def getMyStoreFile() {
+    return file(project.DemoAPP_KEYSTORE)
+}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':support')
