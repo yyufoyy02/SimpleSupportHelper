@@ -20,6 +20,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def fileName
+            def outDirectory = "/apks"
+
+            if ("true" == IS_JENKINS) {
+                fileName = "demo-v" + defaultConfig.versionCode + "-jenkins.apk"
+            } else {
+                if (variant.buildType.name == 'debug') {
+                    fileName = "demo-v" + defaultConfig.versionCode + "-debug.apk"
+                } else {
+                    fileName = "demo-v" + defaultConfig.versionCode + "-release.apk"
+                }
+            }
+            variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + outDirectory)
+            output.outputFileName = fileName
+        }
+    }
 }
 
 dependencies {
