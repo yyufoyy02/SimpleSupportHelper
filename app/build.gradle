@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -13,6 +15,8 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+
     //签名配置
     signingConfigs {
         release {
@@ -40,6 +44,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
