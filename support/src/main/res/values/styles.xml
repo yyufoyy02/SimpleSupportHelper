@@ -124,10 +124,6 @@
         <item name="android:textColorHint">@color/text_color_999999</item>
     </style>
 
-    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/main_color</item>
-    </style>
-
     <style name="GuideDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
         <item name="android:windowBackground">@color/transparent</item>
     </style>
