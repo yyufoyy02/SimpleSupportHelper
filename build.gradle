@@ -22,6 +22,51 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+project.ext {
+    compileSdkVersion = 27
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    versionCode = 2
+    versionName = "1.0.2"
+}
+ext {
+    def lastCommitTitle = getLastCommitMsg()
+    hasReleasePhase = lastCommitTitle.contains('[release-this]')
+    hasPreReleasePhase = lastCommitTitle.contains('[pre-release-this]')
+}
+
+static String getLastCommitMsg() {
+    // Get last commit title info
+    def systemOutStream = new ByteArrayOutputStream()
+    def command = 'git log -1 --no-merges --pretty=format:"%s"'
+    command.execute().waitForProcessOutput(systemOutStream, System.err)
+    return systemOutStream.toString()
+}
+
+task assembleMultiPlatform(type: Copy) {
+    from "./apks"
+    include "demo-v1-release-jenkins(*).apk"
+    into "./jenkins/release"
+    rename "demo-v1-release-jenkins(.*).apk", "release.apk"
+    doLast {
+        println 'assembleRelease success now copy to jenkins for further operations'
+        def scriptPath = "./jenkins/release.sh"
+        def releaseFlag = hasPreReleasePhase ? '--pre-release' : '--release'
+        exec {
+            commandLine "sh", scriptPath, "1", "1.0.0", releaseFlag
+        }
+    }
+    dependsOn(":app:assembleRelease")
+}
+
+task testAssembleMultiPlatform(type: Copy) {
+    def scriptPath = "./jenkins/release.sh"
+    def releaseFlag = hasPreReleasePhase ? '--pre-release' : '--release'
+    exec {
+        commandLine "sh", scriptPath, "1", "1.0.0", releaseFlag
+    }
+//    dependsOn(":jenkins:assembleReleaseRun")
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

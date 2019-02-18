@@ -31,22 +31,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        BaseSupport.initConfig {
-            application = this@MainActivity.application
-        }
-        val decorView = window.decorView ?: return
-        val newFlag = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        decorView.systemUiVisibility = newFlag
-
-
-        tvText.setOnClickListener {
-            loggerE(NotchInScreenHelper.hasNotch().toString())
-            val decorView = window.decorView ?: return@setOnClickListener
-            val newFlag = decorView.systemUiVisibility
-
-            decorView.systemUiVisibility = 0
-        }
-
+//        BaseSupport.initConfig {
+//            application = this@MainActivity.application
+//        }
+//        val decorView = window.decorView ?: return
+//        val newFlag = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//        decorView.systemUiVisibility = newFlag
+//
+//
+//        tvText.setOnClickListener {
+//            loggerE(NotchInScreenHelper.hasNotch().toString())
+//            val decorView = window.decorView ?: return@setOnClickListener
+//            val newFlag = decorView.systemUiVisibility
+//
+//            decorView.systemUiVisibility = 0
+//        }
+        aa.getRiddle()
     }
 }
 

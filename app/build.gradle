@@ -10,10 +10,10 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.viking.vikingdemo"
-        minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
 
 
@@ -60,16 +60,20 @@ android {
                 def outDirectory = "/apks"
 
                 if ("true" == project.IS_JENKINS) {
-                    fileName = "demo-v" + defaultConfig.versionCode + "-release-jenkins.apk"
+                    fileName = "demo-v" + defaultConfig.versionCode + "-release-jenkins(${defaultConfig.versionCode}).apk"
                 } else {
-                    fileName = "demo-v" + defaultConfig.versionCode + "-release.apk"
+                    fileName = "demo-v" + defaultConfig.versionCode + "-release(${defaultConfig.versionCode}).apk"
                 }
                 variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + outDirectory)
                 output.outputFileName = fileName
             }
         }
     }
+
 }
+
+ext {}
+
 /**
  * 获取key路径，创建一份方法来获取key文件路径，jenkins和studio中可使用不同的路径
  * @return

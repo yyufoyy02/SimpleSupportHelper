@@ -1,0 +1,49 @@
+apply plugin: 'groovy'
+
+ext {
+    groovyVersion = '2.6.0-alpha-1'
+    httpBuilderVersion = '0.7.1'
+}
+dependencies {
+    implementation "org.codehaus.groovy.modules.http-builder:http-builder:${httpBuilderVersion}"
+    implementation "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.2.5'
+}
+
+task notifyDeveloper(type: JavaExec) {
+    description 'Notify engineer with DingTalk api'
+
+    // Set main property to name of Groovy script class.
+    main = 'com.viking.ci.NotifyDeveloper'
+
+    // Set classpath for running the Groovy script.
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task notifyDeveloperStart(type: JavaExec) {
+    description 'Notify engineer with DingTalk api'
+
+    // Set main property to name of Groovy script class.
+    main = 'com.viking.ci.NotifyDeveloper'
+
+    args = ["Android 新版本 ${rootProject.ext.versionName}(${rootProject.ext.versionCode}) 正在打包"]
+
+    // Set classpath for running the Groovy script.
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task notifyUploadAPK(type: JavaExec) {
+    description 'Notify engineer with DingTalk api'
+
+    // Set main property to name of Groovy script class.
+    main = 'com.viking.ci.NotifyUploadAPK'
+
+    // Set classpath for running the Groovy script.
+    classpath = sourceSets.main.runtimeClasspath
+}
+//启动Jenkins装配任务
+task assembleReleaseRun {
+    //    dependsOn("notifyDeveloperStart")
+    dependsOn("notifyUploadAPK")
+}
+
