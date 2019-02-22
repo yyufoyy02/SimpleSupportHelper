@@ -61,11 +61,11 @@ task assembleMultiPlatform(type: Copy) {
 }
 
 task testAssembleMultiPlatform(type: Copy) {
-    def scriptPath = "./jenkins/release.sh"
-    def releaseFlag = hasPreReleasePhase ? '--pre-release' : '--release'
     exec {
-        commandLine "sh", scriptPath, "1", "1.0.0", releaseFlag
+        commandLine "sh", "./jenkins/release.sh"
+        commandLine "sh", "./jenkins/changelog.sh"
     }
+    dependsOn(":jenkins:notifyChangelog")
 //    dependsOn(":jenkins:assembleReleaseRun")
 }
 

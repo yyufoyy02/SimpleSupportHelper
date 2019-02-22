@@ -46,7 +46,7 @@ task notifyChangelog(type: JavaExec) {
     description 'Notify changelog with DingTalk api'
 
     // Set main property to name of Groovy script class.
-    main = 'com.meijialove.ci.NotifyChangelog'
+    main = 'com.viking.ci.NotifyChangelog'
 
     // Set classpath for running the Groovy script.
     classpath = sourceSets.main.runtimeClasspath

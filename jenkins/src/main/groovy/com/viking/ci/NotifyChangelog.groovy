@@ -1,5 +1,7 @@
 package com.viking.ci
 
+import groovyjarjarantlr4.v4.runtime.misc.Nullable
+
 import java.util.regex.Matcher
 
 class NotifyChangelog {

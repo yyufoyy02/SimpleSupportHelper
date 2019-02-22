@@ -21,38 +21,18 @@ echo "gradleBase："${gradleBase}
 
 APK=${scriptBase}/release/release.apk # gradle 生成的 release apk
 
-#DT_TEST_TITLE=${scriptBase}/dt_test.title # 钉钉通知内容，给测试小组使用
-#DT_TEST_INFO=${scriptBase}/dt_test.info # 钉钉通知内容，给测试小组使用
-#
-DT_MSG_LOG_PREFIX="--- Print DingTalk Log ---\n"
-## Clean up DingTalk msg variable files
-#rm -f  ${DT_TEST_TITLE} ${DT_TEST_INFO}
-#touch  ${DT_TEST_TITLE} ${DT_TEST_INFO}
-#echo "${DT_MSG_LOG_PREFIX} Clean up DingTalk msg variable files"
-#
-## Create DingTalk msg variable files for test group
-#echo "${DT_MSG_LOG_PREFIX} Create DingTalk msg variable files for test group"
-#DT_TEST_TITLE_VALUE="Android 新版本 ${2}(${1}) "`date '+%Y-%m-%d'`" Changelog:"
-#echo "${DT_TEST_TITLE_VALUE}" > ${DT_TEST_TITLE}
-#echo "${DT_MSG_LOG_PREFIX} ${DT_TEST_TITLE_VALUE}"
-#
-#DT_TEST_INFO_VALUE="${DT_TEST_TITLE_VALUE}\n\n"
-#echo "${DT_TEST_INFO_VALUE}" > ${DT_TEST_INFO}
-#echo "${DT_MSG_LOG_PREFIX} ${DT_TEST_INFO_VALUE}"
-
+# 记录Changelog打包时间
 DT_RELEASE_RECORD_TIME=${scriptBase}/dt_release_record_time.log
- gradle task for test group changelog
-#${gradleBase}/gradlew notifyDeveloperStart
-#if [ $? -eq 0   ]; then
-#    rm -f ${DT_RELEASE_RECORD_TIME}
-#    LAST_COMMIT_TIME=`git log -1 --pretty=format:"%cd" --date=format:"%Y-%m-%d %H:%M:%S"`
-#    # 加一秒逻辑
-#    LAST_COMMIT_UNIX_TIMESTAMP=`date -j -f "%Y-%m-%d %H:%M:%S" "${LAST_COMMIT_TIME}" "+%s"`
-#    LAST_COMMIT_TIME=`date -j -f "%s" "$((${LAST_COMMIT_UNIX_TIMESTAMP}+1))" "+%Y-%m-%d %H:%M:%S"`
-#    `echo ${LAST_COMMIT_TIME} > ${DT_RELEASE_RECORD_TIME}`
-#    echo "notify changelog result success, record current commit time ${LAST_COMMIT_TIME} for future release."
-#else
-#    echo "notify changelog result failed. Something went wrong!"
-#fi
+if [ $? -eq 0   ]; then
+    rm -f ${DT_RELEASE_RECORD_TIME}
+    LAST_COMMIT_TIME=`git log -1 --pretty=format:"%cd" --date=format:"%Y-%m-%d %H:%M:%S"`
+    # 加一秒逻辑
+    LAST_COMMIT_UNIX_TIMESTAMP=`date -j -f "%Y-%m-%d %H:%M:%S" "${LAST_COMMIT_TIME}" "+%s"`
+    LAST_COMMIT_TIME=`date -j -f "%s" "$((${LAST_COMMIT_UNIX_TIMESTAMP}+1))" "+%Y-%m-%d %H:%M:%S"`
+    `echo ${LAST_COMMIT_TIME} > ${DT_RELEASE_RECORD_TIME}`
+    echo "notify changelog result success, record current commit time ${LAST_COMMIT_TIME} for future release."
+else
+    echo "notify changelog result failed. Something went wrong!"
+fi
 
 exit 0
