@@ -41,9 +41,19 @@ task notifyUploadAPK(type: JavaExec) {
     // Set classpath for running the Groovy script.
     classpath = sourceSets.main.runtimeClasspath
 }
+
+task notifyChangelog(type: JavaExec) {
+    description 'Notify changelog with DingTalk api'
+
+    // Set main property to name of Groovy script class.
+    main = 'com.meijialove.ci.NotifyChangelog'
+
+    // Set classpath for running the Groovy script.
+    classpath = sourceSets.main.runtimeClasspath
+}
 //启动Jenkins装配任务
 task assembleReleaseRun {
-    //    dependsOn("notifyDeveloperStart")
+    dependsOn("notifyDeveloperStart")
     dependsOn("notifyUploadAPK")
 }
 

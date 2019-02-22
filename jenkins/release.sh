@@ -40,11 +40,19 @@ DT_MSG_LOG_PREFIX="--- Print DingTalk Log ---\n"
 #echo "${DT_TEST_INFO_VALUE}" > ${DT_TEST_INFO}
 #echo "${DT_MSG_LOG_PREFIX} ${DT_TEST_INFO_VALUE}"
 
-# 该脚本是用于获取当前项目的 changelog ，由缓存时间文件为结点，将 log 存进文件
+DT_RELEASE_RECORD_TIME=${scriptBase}/dt_release_record_time.log
+ gradle task for test group changelog
+#${gradleBase}/gradlew notifyDeveloperStart
+#if [ $? -eq 0   ]; then
+#    rm -f ${DT_RELEASE_RECORD_TIME}
+#    LAST_COMMIT_TIME=`git log -1 --pretty=format:"%cd" --date=format:"%Y-%m-%d %H:%M:%S"`
+#    # 加一秒逻辑
+#    LAST_COMMIT_UNIX_TIMESTAMP=`date -j -f "%Y-%m-%d %H:%M:%S" "${LAST_COMMIT_TIME}" "+%s"`
+#    LAST_COMMIT_TIME=`date -j -f "%s" "$((${LAST_COMMIT_UNIX_TIMESTAMP}+1))" "+%Y-%m-%d %H:%M:%S"`
+#    `echo ${LAST_COMMIT_TIME} > ${DT_RELEASE_RECORD_TIME}`
+#    echo "notify changelog result success, record current commit time ${LAST_COMMIT_TIME} for future release."
+#else
+#    echo "notify changelog result failed. Something went wrong!"
+#fi
 
-# gradle task for test group changelog
-
-echo "${DT_MSG_LOG_PREFIX} 测试"
-LAST_COMMITTER=`git log --pretty=format:"- %s\n" --after="${recordTime}" --no-merges`
-echo "${DT_MSG_LOG_PREFIX} ${LAST_COMMITTER}"
 exit 0
