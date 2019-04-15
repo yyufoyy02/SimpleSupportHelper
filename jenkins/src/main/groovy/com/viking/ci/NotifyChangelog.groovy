@@ -9,9 +9,8 @@ class NotifyChangelog {
     static void main(String... args) {
         println("NotifyChangelog启动")
 
-        //        def dingTitle = "Android 新版本 ${BuildConfig.getVersionName()}(${BuildConfig.getVersionCode()}) \"`date '+%Y-%m-%d'`\" Changelog:"
-        //
-        //        def analyzeResult = analyzeCommitLog()
+                def dingTitle = "Android 新版本 ${BuildConfig.getVersionName()}(${BuildConfig.getVersionCode()}) \"`date '+%Y-%m-%d'`\" Changelog:"
+//                def analyzeResult = analyzeCommitLog()
         //        def invalidCommitTitle = analyzeResult.invalidCommitTitle
         //
         //        // 通知不规范的 commit 信息

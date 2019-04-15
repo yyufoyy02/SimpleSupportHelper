@@ -43,8 +43,8 @@ task notifyUploadAPK(type: JavaExec) {
 }
 
 task notifyChangelog(type: JavaExec) {
+//    commandLine "changelog.sh"
     description 'Notify changelog with DingTalk api'
-
     // Set main property to name of Groovy script class.
     main = 'com.viking.ci.NotifyChangelog'
 

@@ -8,11 +8,11 @@ scriptBase=$(cd `dirname $0`; pwd)
 gradleBase=$(cd ${scriptBase}/../; pwd)
 
 dtChangelogFile=${scriptBase}/dt_release_raw.log
-
 # 访问到项目目录，从而让 git 获取到正确信息
 cd ${gradleBase}
 
 recordTime=`cat ${scriptBase}/dt_release_record_time.log | sed "s/^[ \s]\{1,\}//g;s/[ \s]\{1,\}$//g"`
+echo "recordTime：${recordTime}"
 rawLogs=`git log --pretty=format:"- %s\n" --after="${recordTime}" --no-merges`
 
 rm -f ${dtChangelogFile}

@@ -35,7 +35,6 @@ object NotchInScreenHelper : NotchInScreen {
  * @date 2018/6/20
  */
 class OppoNotchInScreen : NotchInScreen {
-
     override fun hasNotch(): Boolean {
         return AppContextHelper.application.packageManager.hasSystemFeature("com.oppo.feature.screen.heteromorphism")
     }

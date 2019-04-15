@@ -63,7 +63,6 @@ task assembleMultiPlatform(type: Copy) {
 task testAssembleMultiPlatform(type: Copy) {
     exec {
         commandLine "sh", "./jenkins/release.sh"
-        commandLine "sh", "./jenkins/changelog.sh"
     }
     dependsOn(":jenkins:notifyChangelog")
 //    dependsOn(":jenkins:assembleReleaseRun")
