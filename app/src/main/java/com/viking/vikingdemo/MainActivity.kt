@@ -39,13 +39,14 @@ class MainActivity : AppCompatActivity() {
 //        decorView.systemUiVisibility = newFlag
 //
 //
-//        tvText.setOnClickListener {
+        tvText.setOnClickListener {
 //            loggerE(NotchInScreenHelper.hasNotch().toString())
 //            val decorView = window.decorView ?: return@setOnClickListener
 //            val newFlag = decorView.systemUiVisibility
 //
 //            decorView.systemUiVisibility = 0
-//        }
+            ToastHelper.showToast(ChannelUtil.getChannelFrom(this@MainActivity),5000)
+        }
         aa.getRiddle()
     }
 }
