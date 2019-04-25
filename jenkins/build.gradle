@@ -51,6 +51,14 @@ task notifyChangelog(type: JavaExec) {
     // Set classpath for running the Groovy script.
     classpath = sourceSets.main.runtimeClasspath
 }
+task notifyApkBuild(type: JavaExec) {
+
+    // Set main property to name of Groovy script class.
+    main = 'com.viking.ci.ApkMarket'
+
+    // Set classpath for running the Groovy script.
+    classpath = sourceSets.main.runtimeClasspath
+}
 //启动Jenkins装配任务
 task assembleReleaseRun {
     dependsOn("notifyDeveloperStart")
